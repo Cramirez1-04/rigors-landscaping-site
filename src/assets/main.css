@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+
+
+/*
+color palette:
+primary / logo -> lime green: #84cc16
+background dark -> charcoal: #1a1a1a
+background light -> off-white: #f8f8f5
+accent dark -> deep green: #2d4a00
+section bg -> warm cream: #f5f0e8
+*/
+
+:root{
+    --primary-font: 'Bebas Neue', sans-serif;
+    --primary-font-size: 42px;
+
+    --section-title-font: 'Bebas Neue', sans-serif;
+    --section-title-weight: 400;
+    --section-title-size: 48px;
+
+    --secondary-font: 'Nunito', sans-serif;
+    --secondary-font-size: 16px;
+
+    --card-title-font: 'Bebas Neue', sans-serif;
+    --card-title-weight: 400;
+    --card-title-size: 32px;
+
+    --main-heading-font: 'Nunito', sans-serif;
+    --main-heading-weight: 700;
+    --main-heading-size: 36px;
+
+    --secondary-heading-font: 'Nunito', sans-serif;
+    --secondary-heading-weight: 700;
+    --secondary-heading-size: 28px;
+
+    --heading3-font: 'Nunito', sans-serif;
+    --heading3-weight: 600;
+    --heading3-size: 22px;
+
+    --paragraph-font: 'Nunito', sans-serif;
+    --paragraph-weight: 400;
+    --paragraph-size: 16px;
+
+    --small-caption-font: 'Nunito', sans-serif;
+    --small-caption-weight: 400;
+    --small-caption-size: 14px;
+
+    --button-font: 'Nunito', sans-serif;
+    --button-weight: 700;
+    --button-size: 16px;
+
+
+
+
+
+    --logo-color: #84cc16;
+    --charcoal-color: #1a1a1a;
+    --off-white-color: #f8f8f5;
+    --deep-green-color: #2d4a00;
+    --warm-cream-color: #f5f0e8;
+
+
+
+}
