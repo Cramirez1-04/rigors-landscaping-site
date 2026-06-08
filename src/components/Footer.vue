@@ -5,7 +5,7 @@
         
         <!-- Column 1 - Logo -->
         <div class="footer-col logo-col">
-          <img src="/logo.png" alt="Rigor's Landscaping" class="footer-logo">
+          <img src="/favicon.ico" alt="Rigor's Landscaping" class="footer-logo">
         </div>
         
         <!-- Column 2 - Quick Links -->

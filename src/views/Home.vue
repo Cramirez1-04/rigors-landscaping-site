@@ -17,36 +17,38 @@
     </section>
 
     <!-- Services Section -->
-<section class="py-20 bg-white ">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl  text-gray-800 mb-4">Our Services</h2>
-      <p class="service-text text-gray-600 text-lg max-w-2xl mx-auto">
-        Comprehensive landscaping solutions tailored to your needs
-      </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div v-for="service in services" :key="service.title" 
-           class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-        <div class="h-48 bg-cover bg-center" :style="{ backgroundImage: `url(${service.image})` }"></div>
-        <div class="p-6">
-          <!-- Icon and title side by side -->
-          <div class="flex items-center gap-3 mb-4">
-            <img :src="service.icon" :alt="service.title" class="w-10 h-10 object-contain">
-            <h3 class="text-xl font-bold">{{ service.title }}</h3>
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl text-gray-800 mb-4">Our Services</h2>
+          <p class="service-text text-gray-600 text-lg max-w-2xl mx-auto">
+            Comprehensive landscaping solutions tailored to your needs
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div v-for="service in services" :key="service.title" 
+               class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+            <!-- FIXED: Use getImageUrl for background image -->
+            <div class="h-48 bg-cover bg-center" :style="{ backgroundImage: `url(${getImageUrl(service.image)})` }"></div>
+            <div class="p-6">
+              <!-- Icon and title side by side -->
+              <div class="flex items-center gap-3 mb-4">
+                <!-- FIXED: Use getImageUrl for icon -->
+                <img :src="getImageUrl(service.icon)" :alt="service.title" class="w-10 h-10 object-contain">
+                <h3 class="text-xl font-bold">{{ service.title }}</h3>
+              </div>
+              <p class="text-gray-600">{{ service.description }}</p>
+            </div>
           </div>
-          <p class="text-gray-600">{{ service.description }}</p>
+        </div>
+
+        <div class="flex justify-center">
+          <router-link to="/services" class="view-more bg-gray-200 hover:bg-(--logo-color) hover:text-(--off-white-color) text-gray-800 mt-8 py-3 px-8 rounded-lg font-semibold transition duration-300 transform hover:scale-105">
+            View All Services
+          </router-link>
         </div>
       </div>
-    </div>
-
-    <div class="flex justify-center">
-      <router-link to="/services" class="view-more bg-gray-200 hover:bg-(--logo-color) hover:text-(--off-white-color) text-gray-800 mt-8 py-3 px-8 rounded-lg font-semibold transition duration-300 transform hover:scale-105">
-        View All Services
-      </router-link>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Testimonials -->
     <section class="py-20 bg-(--off-white-color)">
@@ -59,7 +61,7 @@
             Trusted by hundreds of satisfied customers
           </p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 ">
+        <div class="grid md:grid-cols-3 gap-8">
           <div
             v-for="testimonial in testimonials"
             :key="testimonial.name"
@@ -68,7 +70,7 @@
             <div class="flex items-center mb-4">
               <div class="text-yellow-400">★★★★★</div>
             </div>
-            <p class="text-gray-700 mb-4 ">"{{ testimonial.quote }}"</p>
+            <p class="text-gray-700 mb-4">"{{ testimonial.quote }}"</p>
             <div class="flex items-center">
               <div
                 class="w-12 h-12 bg-gray-300 rounded-full mr-3 flex items-center justify-center text-xl"
@@ -87,11 +89,8 @@
             Write A Review
           </a>
         </div>
-
-
       </div>
     </section>
-
 
     <!-- Contact/Call to Action -->
     <section class="transformation py-20">
@@ -108,7 +107,6 @@
           >
             Call: (920) 264-8523
           </button>
-          
         </div>
       </div>
     </section>
@@ -120,49 +118,57 @@ export default {
   name: "Home",
   data() {
     return {
+      baseUrl: import.meta.env.BASE_URL,
       services: [
         {
           title: "Landscape Maintenance",
-          description:
-            "Custom garden designs and spring cleanups",
-          icon: "/public/icons/multileaf.png",
-          image:
-            "/public/images/decorativestones/decorativestones2.jpg",
+          description: "Custom garden designs and spring cleanups",
+          icon: "/icons/multileaf.png",
+          // FIXED: Removed '/public' from the path
+          image: "/images/decorativestones/decorativestones2.jpg",
         },
         {
           title: "Landscape Installation",
           description: "Professional lawn services",
-          icon: "/public/icons/leaf.png",
-          image:
-            "/public/images/landscapingMaintenance/landscapingMaintenance.jpg",
+          icon: "/icons/leaf.png",
+          // FIXED: Removed '/public' from the path
+          image: "/images/landscapingMaintenance/landscapingMaintenance.jpg",
         },
         {
           title: "Tree Services",
           description: "Tree trimming, removal, and stump grinding",
-          icon: "/public/icons/tree.png",
-          image:
-            "/public/images/trimming/trimming1.jpg",
+          icon: "/icons/tree.png",
+          // FIXED: Removed '/public' from the path
+          image: "/images/trimming/trimming1.jpg",
         },
       ],
       testimonials: [
         {
           name: "Joan Malvitz",
-          quote:"Rigo landscare and snowplowing plowed my driveway. I called him at last minute and he came over almost immediately. Rigo, did a standup job. I would call Rigo again, great service. Thank you Rigo!",
+          quote: "Rigo landscare and snowplowing plowed my driveway. I called him at last minute and he came over almost immediately. Rigo, did a standup job. I would call Rigo again, great service. Thank you Rigo!",
           avatar: "👨",
         },
         {
           name: "Be Happy",
-          quote: "Rigo and his crew provides great work, he is professional, has very reasonable prices, and they always do a great job cleaning up after their work. ",
+          quote: "Rigo and his crew provides great work, he is professional, has very reasonable prices, and they always do a great job cleaning up after their work.",
           avatar: "👨",
         },
         {
           name: "Ricky Y",
-          quote:"Rigo and his crew have completed serval projects on our properties over the last few years beautifully and to our 100% satisfaction",
+          quote: "Rigo and his crew have completed serval projects on our properties over the last few years beautifully and to our 100% satisfaction",
           avatar: "👨",
         },
       ],
     };
   },
+  methods: {
+    getImageUrl(path) {
+      if (!path) return ''
+      // Remove leading slash if present to avoid double slashes
+      const cleanPath = path.startsWith('/') ? path.slice(1) : path
+      return `${this.baseUrl}${cleanPath}`
+    }
+  }
 };
 </script>
 
@@ -234,8 +240,8 @@ button.free-quote {
   font-weight: var(--paragraph-weight);
   font-size: var(--paragraph-size);
 }
-.transformation{
- background-image: linear-gradient( 90.8deg,  rgb(19, 124, 72) 2.2%, #84cc16 84% );   
+.transformation {
+  background-image: linear-gradient(90.8deg, rgb(19, 124, 72) 2.2%, #84cc16 84%);
 }
 
 @media (max-width: 768px) {

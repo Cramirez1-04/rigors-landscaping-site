@@ -25,7 +25,7 @@
               class="category-tab"
               :class="{ active: activeCategory === category.id }"
             >
-              <img :src="category.icon" alt="category.name" class="category-icon">
+              <img :src="getImageUrl(category.icon)" alt="category.name" class="category-icon">
               <span class="category-name">{{ category.name }}</span>
             </button>
           </div>
@@ -71,7 +71,7 @@
             @click="openLightbox(index)"
           >
             <div class="image-wrapper">
-              <img :src="image.url" :alt="image.title || currentCategory.name" loading="lazy">
+              <img :src="getImageUrl(image.url)" :alt="image.title || currentCategory.name" loading="lazy">
             </div>
           </div>
 
@@ -84,11 +84,11 @@
           >
             <div class="image-wrapper before-after-wrapper">
               <div class="ba-half ba-before">
-                <img :src="pair.beforeUrl" :alt="'Before ' + pair.title">
+                <img :src="getImageUrl(pair.beforeUrl)" :alt="'Before ' + pair.title">
                 <span class="ba-label before-label">BEFORE</span>
               </div>
               <div class="ba-half ba-after">
-                <img :src="pair.afterUrl" :alt="'After ' + pair.title">
+                <img :src="getImageUrl(pair.afterUrl)" :alt="'After ' + pair.title">
                 <span class="ba-label after-label">AFTER</span>
               </div>
               <div class="ba-arrow">→</div>
@@ -129,7 +129,7 @@
       </button>
       
       <div class="lightbox-content" @click.stop>
-        <img :src="currentImage.url" :alt="currentImage.title || currentCategory.name">
+        <img :src="getImageUrl(currentImage.url)" :alt="currentImage.title || currentCategory.name">
         <div class="lightbox-info" v-if="currentImage.title">
           <h3>{{ currentImage.title }}</h3>
           <span class="lightbox-category">{{ currentCategory.name }}</span>
@@ -164,11 +164,11 @@
       <div class="lightbox-content" @click.stop>
         <div class="lightbox-ba-container">
           <div class="lightbox-ba-half">
-            <img :src="currentBeforeAfterPair.beforeUrl" alt="Before">
+            <img :src="getImageUrl(currentBeforeAfterPair.beforeUrl)" alt="Before">
             <div class="lightbox-ba-label before">BEFORE</div>
           </div>
           <div class="lightbox-ba-half">
-            <img :src="currentBeforeAfterPair.afterUrl" alt="After">
+            <img :src="getImageUrl(currentBeforeAfterPair.afterUrl)" alt="After">
             <div class="lightbox-ba-label after">AFTER</div>
           </div>
         </div>
@@ -190,6 +190,7 @@ export default {
   name: 'Gallery',
   data() {
     return {
+      baseUrl: import.meta.env.BASE_URL,
       activeCategory: 'spring',
       lightboxOpen: false,
       lightboxType: 'regular',
@@ -336,6 +337,13 @@ export default {
     }
   },
   computed: {
+    getImageUrl(){
+      return(path) => {
+        if(!path) return ''
+        const cleanPath = path.startsWith('/') ? path.slice(1): path
+        return `${this.baseUrl}${cleanPath}`
+      }
+    },
     currentCategory() {
       return this.categories.find(cat => cat.id === this.activeCategory)
     },

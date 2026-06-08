@@ -37,13 +37,15 @@
             class="service-card group"
           >
             <div class="service-image-wrapper">
-              <div class="service-image" :style="{ backgroundImage: `url(${service.image})` }"></div>
+              <!-- FIXED: Use getImageUrl for background image -->
+              <div class="service-image" :style="{ backgroundImage: `url(${getImageUrl(service.image)})` }"></div>
               <div class="service-overlay">
                 
               </div>
             </div>
             <div class="service-content">
-              <img :src="service.icon" :alt="service.title" class="service-icon-img">
+              <!-- FIXED: Use getImageUrl for icon -->
+              <img :src="getImageUrl(service.icon)" :alt="service.title" class="service-icon-img">
               <h3 class="service-title">{{ service.title }}</h3>
               <p class="service-description">{{ service.shortDescription }}</p>
               <div class="service-footer">
@@ -63,6 +65,7 @@ export default {
   name: 'Services',
   data() {
     return {
+      baseUrl: import.meta.env.BASE_URL,
       activeCategory: 'All',
       categories: ['All', 'Clean Ups', 'Snow Removal', 'Maintenance', 'Planting', 'Decorative', 'Tree Services'],
       services: [
@@ -74,6 +77,7 @@ export default {
           fullDescription: 'Comprehensive spring cleaning to revitalize your landscape',
           icon: '/icons/leaf.png',
           image: '/images/landscapingMaintenance/landscapingMaintenance.jpg',
+          pricing: '$200+',
         },
         {
           id: 2,
@@ -83,6 +87,7 @@ export default {
           fullDescription: 'Keep your property safe and accessible during winter',
           icon: '/icons/snowflake-regular.png',
           image: '/images/snowremoval/snowremoval1.jpg',
+          pricing: '$75+',
         },
         {
           id: 3,
@@ -92,6 +97,7 @@ export default {
           fullDescription: 'Keep your lawn healthy with professional leaf removal',
           icon: '/icons/multileaf.png',
           image: '/images/leafremoval/leafremoval1.jpg',
+          pricing: '$150+',
         },
         {
           id: 4,
@@ -101,6 +107,7 @@ export default {
           fullDescription: 'Keep your shrubs and hedges looking perfect',
           icon: '/icons/scissors-solid.png',
           image: '/images/trimming/trimming3.jpg',
+          pricing: '$100+',
         },
         {
           id: 5,
@@ -110,6 +117,7 @@ export default {
           fullDescription: 'Transform your landscape with professionally selected plants',
           icon: '/icons/seedling-solid.png',
           image: '/images/planting/planting2.jpg',
+          pricing: '$250+',
         },
         {
           id: 6,
@@ -119,6 +127,7 @@ export default {
           fullDescription: 'Enhance your landscape with decorative elements',
           icon: '/icons/stone.png',
           image: '/images/decorativestones/decorativestones2.jpg',
+          pricing: '$180+',
         },
         {
           id: 7,
@@ -128,6 +137,7 @@ export default {
           fullDescription: 'Expert removal for dangerous or unwanted trees',
           icon: '/icons/person-digging-solid.png',
           image: '/images/treeservices/treeservice5.jpg',
+          pricing: '$500+',
         },
         {
           id: 8,
@@ -137,6 +147,7 @@ export default {
           fullDescription: 'Maintain tree health and safety',
           icon: '/icons/tree.png',
           image: '/images/treeservices/treeservice4.jpg',
+          pricing: '$250+',
         },
         {
           id: 9,
@@ -146,6 +157,7 @@ export default {
           fullDescription: 'Remove unsightly tree stumps from your property',
           icon: '/icons/mound-solid.png',
           image: '/images/treeservices/treeservice6.jpg',
+          pricing: '$150+',
         }
       ]
     }
@@ -156,6 +168,14 @@ export default {
         return this.services
       }
       return this.services.filter(service => service.category === this.activeCategory)
+    }
+  },
+  methods: {
+    getImageUrl(path) {
+      if (!path) return ''
+      // Remove leading slash if present to avoid double slashes
+      const cleanPath = path.startsWith('/') ? path.slice(1) : path
+      return `${this.baseUrl}${cleanPath}`
     }
   }
 }
