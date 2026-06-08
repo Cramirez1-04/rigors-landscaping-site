@@ -12,10 +12,18 @@ export default defineConfig({
     tailwindcss(),
     vueDevTools(),
   ],
-  base: '/rigors-landscaping-site',
+  base: '/rigors-landscaping-site/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build:{
+    assetsDir: 'assets',
+    rollupOptions:{
+      output:{
+        assetFileNames: 'assets/[name]-[hash][extname]'
+      }
+    }
+  }
 })

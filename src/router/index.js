@@ -10,7 +10,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory('/rigors-landscaping-site/'  ),
+    history: createWebHistory( ),
     routes,
 })
 
