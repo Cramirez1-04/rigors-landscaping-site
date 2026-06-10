@@ -38,7 +38,7 @@
               <span class="contact-icon">
                 <img src="/icons/facebook-f-brands-solid.png" alt="Facebook">
               </span>
-              <a href="https://www.facebook.com/rigoslandscapingllc" target="_blank" class="footer-link facebook-link">Rigor's Landscaping</a>
+              <a href="https://www.facebook.com/rigoslandscapingllc" target="_blank" class="footer-link facebook-link">Rigo's Landscaping</a>
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@
       
       <!-- Bottom Bar -->
       <div class="footer-bottom">
-        <p>© 2026 Rigor's Landscaping LLC • Copyright All rights reserved.</p>
+        <p>© 2026 Rigo's Landscaping LLC • Copyright All rights reserved.</p>
       </div>
     </div>
   </footer>
