@@ -4,10 +4,10 @@
       <div class="flex justify-between items-center">
         <!-- Logo and Brand -->
         <div class="flex items-center gap-2 sm:gap-3">
-          <img src="/favicon.ico" alt="Rigor's LandScaping Logo" class="logo-img">
+          <img src="/favicon.ico" alt="Rigo's LandScaping Logo" class="logo-img">
           <!-- Full brand name on all devices -->
           <h1 class="brand-name" style="font-family:var(--primary-font); color:var(--logo-color);">
-            Rigor's LandScaping
+            Rigo's LandScaping
           </h1>
         </div>
         
