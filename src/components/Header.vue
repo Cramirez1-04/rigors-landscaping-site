@@ -72,13 +72,51 @@ export default {
   font-family: var(--primary-font);
   color: var(--logo-color);
 }
+/* ============================================ */
+/* 4K LAPTOP (2560px) - BRAND NAME ON LEFT */
+/* ============================================ */
+
+@media (min-width: 2560px) {
+  nav .max-w-7xl {
+    max-width: 75%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .brand-name {
+    font-size: 90px;
+  }
+  
+  /* Logo Image - larger */
+  .logo-img {
+    height: 100px;
+  }
+  
+  .desktop-nav {
+    display: flex;
+    margin-left: auto; 
+  }
+  
+  
+  /* Ensure flex layout maintains left/right alignment */
+  .flex.justify-between.items-center {
+    justify-content: space-between;
+  }
+  
+  /* Logo and brand container stays on left */
+  .flex.items-center.gap-2.sm\:gap-3 {
+    flex-shrink: 0;
+  }
+}
+
+
 
 /* ============================================ */
-/* LARGE DESKTOP (1400px and above) */
+/* LARGE DESKTOP (1400px ) */
 /* ============================================ */
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (max-width:1999px) {
   .brand-name {
-    font-size: 72px;
+    font-size: 50px;
   }
   
   .logo-img {
@@ -86,12 +124,14 @@ export default {
   }
 }
 
+
+
 /* ============================================ */
 /* DESKTOP / LAPTOP (1024px - 1399px)  */
 /* ============================================ */
 @media (min-width: 1024px) and (max-width: 1399px) {
   .brand-name {
-    font-size: 62px;
+    font-size: 55px;
   }
   
   .logo-img {
@@ -196,6 +236,13 @@ export default {
     font-size: 1.1rem;
   }
 }
+@media (min-width: 2560px) {
+  .nav-link {
+    padding: 0.75rem 1.25rem;
+    font-size: 2rem;
+  }
+}
+
 
 .nav-link:hover {
   background-color: var(--logo-color);

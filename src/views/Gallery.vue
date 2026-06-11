@@ -537,12 +537,10 @@ export default {
   font-weight: 600;
 }
 
-/* ============================================ */
-/* TABLET BREAKPOINT (768px - 1023px) */
-/* ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* TABLET BREAKPOINT (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .category-tab {
-    padding: 0.45rem 1rem;
+    padding: 0.42rem 1rem;
     gap: 0.4rem;
   }
   
@@ -755,7 +753,7 @@ export default {
 
 @media (max-width: 425px) {
   .ba-title {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 }
 
@@ -987,6 +985,179 @@ export default {
   
   .gallery-hero p {
     font-size: 0.9rem;
+  }
+}
+
+/* For 2560px laptops and larger screens */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  /* Container - wider for large screens */
+  .container {
+    max-width: 2000px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  
+  /* Hero Section - larger typography */
+  .gallery-hero {
+    padding-top: 150px;
+    padding-bottom: 40px;
+  }
+  
+  .gallery-hero h1 {
+    font-size: 5rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gallery-hero p {
+    font-size: 2.5rem !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Category Tabs - larger and more spaced */
+  .category-tabs-container {
+    padding: 1rem 4rem;
+    gap: 1.5rem;
+  }
+  
+  .category-tab {
+    padding: 1rem 2rem;
+    gap: 0.5rem;
+  }
+  
+  .category-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .category-name {
+    font-size: 1.4rem;
+  }
+  
+  /* Category Title Section */
+  .text-center.mb-10 {
+    margin-bottom: 3rem;
+  }
+  
+  .text-center.mb-10 h2 {
+    font-size: 4rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .text-center.mb-10 p {
+    font-size: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Gallery Items - larger images */
+  .image-wrapper {
+    height: 400px;
+    border-radius: 16px;
+  }
+  
+  .gallery-item {
+    border-radius: 16px;
+  }
+  
+  /* Before/After Cards - larger */
+  .before-after-wrapper {
+    gap: 8px;
+  }
+  
+  .ba-label {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    bottom: 15px;
+  }
+  
+  .before-label {
+    left: 15px;
+  }
+  
+  .after-label {
+    right: 15px;
+  }
+  
+  .ba-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
+  }
+  
+  .ba-title {
+    margin-top: 12px;
+    font-size: 1.6rem;
+  }
+  
+  /* Lightbox - larger images */
+  .lightbox-content {
+    max-width: 85vw;
+    max-height: 85vh;
+  }
+  
+  .lightbox-content img {
+    max-width: 85vw;
+    max-height: 75vh;
+  }
+  
+  .lightbox-ba-container {
+    width: 85vw;
+    max-width: 1800px;
+    height: 80vh;
+    min-height: 600px;
+  }
+  
+  .lightbox-ba-label {
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    top: 30px;
+  }
+  
+  .lightbox-ba-label.before {
+    left: 30px;
+  }
+  
+  .lightbox-ba-label.after {
+    right: 30px;
+  }
+  
+  .lightbox-info {
+    bottom: -80px;
+  }
+  
+  .lightbox-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    transform: scale(1.2);
+  }
+  
+  .lightbox-close {
+    top: 30px;
+    right: 30px;
+  }
+  
+  .lightbox-prev {
+    left: 40px;
+  }
+  
+  .lightbox-next {
+    right: 40px;
+  }
+  
+  .lightbox-counter {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    bottom: 30px;
+    right: 30px;
   }
 }
 </style>

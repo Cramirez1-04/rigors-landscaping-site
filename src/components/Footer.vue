@@ -191,7 +191,9 @@ export default {
   margin: 0;
 }
 
+/* ============================================ */
 /* TABLET BREAKPOINT (768px) */
+/* ============================================ */
 @media (min-width: 768px) {
   .footer {
     padding: 3rem 2rem 2rem;
@@ -247,27 +249,33 @@ export default {
   }
 }
 
-/* DESKTOP BREAKPOINT (1024px) */
-@media (min-width: 1024px) {
+/* ============================================ */
+/* DESKTOP BREAKPOINT (1024px - 1439px) */
+/* ============================================ */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .footer-container {
+    max-width: 1200px;
+  }
+  
   .footer-grid {
     gap: 3rem;
   }
   
   .footer-logo {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
   }
   
   .footer-heading {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   
   .footer-link {
-    font-size: var(--secondary-font-size);
+    font-size: 1rem;
   }
   
   .contact-item {
-    font-size: var(--secondary-font-size);
+    font-size: 0.95rem;
     gap: 0.75rem;
   }
   
@@ -281,7 +289,155 @@ export default {
   }
 }
 
+/* ============================================ */
+/* LARGE DESKTOP (1440px - 2559px) */
+/* ============================================ */
+@media (min-width: 1440px) and (max-width: 2559px) {
+  .footer-container {
+    max-width: 1400px;
+    padding: 0 2rem;
+  }
+  
+  .footer-grid {
+    gap: 4rem;
+  }
+  
+  .footer-logo {
+    height: 150px;
+    width: 150px;
+  }
+  
+  .footer-heading {
+    font-size: 1.6rem;
+    text-underline-offset: 10px;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+  }
+  
+  .footer-link {
+    font-size: 1.1rem;
+  }
+  
+  .footer-contact {
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    font-size: 1.1rem;
+    gap: 0.8rem;
+  }
+  
+  .contact-icon {
+    width: 28px;
+  }
+  
+  .contact-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================ */
+/* 4K LAPTOP (2560px and above) - FIXED FOR LARGER SCREENS */
+/* ============================================ */
+@media (min-width: 2560px) {
+  /* Expand the container to use more screen space */
+  .footer-container {
+    max-width: 2200px;
+    padding: 0 4rem;
+  }
+  
+  /* Increase padding overall */
+  .footer {
+    padding: 5rem 3rem 3rem;
+  }
+  
+  /* Larger gaps between columns */
+  .footer-grid {
+    gap: 6rem;
+  }
+  
+  /* Much larger logo */
+  .footer-logo {
+    height: 320px;
+    width: 320px;
+    box-shadow: 4px 4px 16px rgba(46, 77, 0, 0.4);
+  }
+  
+  /* Larger headings */
+  .footer-heading {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-underline-offset: 15px;
+  }
+  
+  /* More spacing between links */
+  .footer-links {
+    gap: 1.6rem;
+  }
+  
+  /* Much larger link text */
+  .footer-link {
+    font-size: 1.6rem;
+  }
+  
+  /* Hover effect for 4K */
+  .footer-link:hover {
+    transform: translateX(8px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* More spacing in contact section */
+  .footer-contact {
+    gap: 1.5rem;
+  }
+  
+  /* Larger contact text */
+  .contact-item {
+    font-size: 1.6rem;
+    gap: 1.2rem;
+  }
+  
+  /* Larger icons */
+  .contact-icon {
+    width: 40px;
+  }
+  
+  .contact-icon img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* Larger icon hover effect */
+  .contact-item:hover .contact-icon img {
+    transform: scale(1.2);
+  }
+  
+  /* Larger bottom bar */
+  .footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+  }
+  
+  .footer-bottom p {
+    font-size: 1.6rem;
+  }
+}
+
+/* ============================================ */
 /* MOBILE BREAKPOINT (425px) */
+/* ============================================ */
 @media (max-width: 425px) {
   .footer {
     padding: 1.5rem 0.75rem 1rem;
@@ -336,7 +492,9 @@ export default {
   }
 }
 
-/* SMALL MOBILE BREAKPOINT (375px) */
+/* ============================================ */
+/* SMALL MOBILE (375px) */
+/* ============================================ */
 @media (max-width: 375px) {
   .footer {
     padding: 1.25rem 0.6rem 0.875rem;
@@ -375,40 +533,6 @@ export default {
   
   .footer-bottom p {
     font-size: 0.6rem;
-  }
-}
-
-/* EXTRA SMALL MOBILE BREAKPOINT (320px) */
-@media (max-width: 320px) {
-  .footer {
-    padding: 1rem 0.5rem 0.75rem;
-  }
-  
-  .footer-logo {
-    height: 55px;
-    width: 55px;
-  }
-  
-  .footer-heading {
-    font-size: 0.95rem;
-  }
-  
-  .footer-link {
-    font-size: 0.7rem;
-  }
-  
-  .contact-item {
-    font-size: 0.65rem;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  
-  .contact-icon {
-    width: auto;
-  }
-  
-  .footer-bottom p {
-    font-size: 0.55rem;
   }
 }
 </style>

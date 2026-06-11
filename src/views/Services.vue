@@ -37,7 +37,6 @@
             class="service-card group"
           >
             <div class="service-image-wrapper">
-              <!-- FIXED: Use getImageUrl for background image -->
               <div class="service-image" :style="{ backgroundImage: `url(${getImageUrl(service.image)})` }"></div>
               <div class="service-overlay">
                 
@@ -185,7 +184,7 @@ export default {
   position: relative;
   overflow: hidden;
   margin-top: 0;
-  padding-top: 80px;
+  padding-top: 90px;
 }
 
 .services-hero::before {
@@ -231,7 +230,7 @@ export default {
 .category-btn {
   padding: 0.6rem 1.5rem;
   border-radius: 50px;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid var(--logo-color);
@@ -252,6 +251,8 @@ export default {
   box-shadow: 0 4px 12px rgba(132, 204, 22, 0.3);
 }
 
+
+
 /* Services Grid - Responsive */
 .services-grid {
   display: grid;
@@ -262,7 +263,7 @@ export default {
 @media (min-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
@@ -270,7 +271,7 @@ export default {
 @media (min-width: 768px) and (max-width: 1023px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
+    gap: 1.4rem;
   }
 }
 
@@ -305,7 +306,7 @@ export default {
 /* Desktop image height */
 @media (min-width: 1024px) {
   .service-image-wrapper {
-    height: 220px;
+    height: 210px;
   }
 }
 
@@ -348,7 +349,6 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(45, 74, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,15 +434,16 @@ export default {
 /* Desktop title */
 @media (min-width: 1024px) {
   .service-title {
-    font-size: 1.35rem;
+    font-size: 1.7rem;
   }
 }
 
 /* Tablet title */
 @media (min-width: 768px) and (max-width: 1023px) {
   .service-title {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
+  
 }
 
 /* Mobile title */
@@ -455,7 +456,7 @@ export default {
 /* Small mobile title */
 @media (max-width: 425px) {
   .service-title {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -469,8 +470,9 @@ export default {
 
 /* Desktop  */
 @media (min-width: 1024px) {
+
   .service-description {
-    font-size: var(--paragraph-size);
+    font-size: 1.2rem;
   }
 }
 
@@ -484,7 +486,7 @@ export default {
 /* Small mobile */
 @media (max-width: 425px) {
   .service-description {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     line-height: 1.4;
   }
 }
@@ -524,11 +526,6 @@ export default {
   }
 }
 
-.service-price {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--logo-color);
-}
 
 @media (max-width: 425px) {
   .service-price {
@@ -561,20 +558,23 @@ export default {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .service-description{
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 425px) {
   .services-hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .services-hero p {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   
   .category-btn {
     padding: 0.35rem 0.85rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
@@ -582,6 +582,140 @@ export default {
 @media (max-width: 640px) {
   .flex.justify-center.gap-3 {
     gap: 0.5rem;
+  }
+}
+
+/*laptops > 1440px */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  /* Container */
+  .container {
+    max-width: 1280px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  /* Hero Section */
+  .services-hero {
+    padding-top: 120px;
+  }
+  
+  .services-hero h1 {
+    font-size: 5rem;
+  }
+  
+  .services-hero p {
+    font-size: 2rem;
+  }
+  
+  /* Category Buttons */
+  .category-btn {
+    padding: 0.7rem 1.75rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Services Grid - 3 columns remain but with adjusted gap */
+  .services-grid {
+    gap: 1.5rem;
+  }
+  
+  /* Service Cards */
+  .service-image-wrapper {
+    height: 220px;
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .service-icon-img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .service-title {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  
+  .service-footer {
+    padding-top: 1rem;
+  }
+  
+  .service-category {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.85rem;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2560px) {
+  /* Container */
+  .container {
+    max-width: 2560px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  
+  /* Hero Section */
+  .services-hero {
+    padding-top: 130px;
+  }
+  
+  .services-hero h1 {
+    font-size: 6rem;
+  }
+  
+  .services-hero p {
+    font-size: 2rem;
+  }
+  
+  /* Category Buttons */
+  .category-btn {
+    padding: 0.7rem 2rem;
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    gap: 1.8rem;
+  }
+  
+  /* Service Cards */
+  .service-image-wrapper {
+    height: 450px;
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .service-icon-img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .service-title {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  
+  .service-footer {
+    padding-top: 1rem;
+  }
+  
+  .service-category {
+    font-size: 1.6rem;
+    padding: 0.3rem 0.85rem;
   }
 }
 </style>
